@@ -28,4 +28,4 @@ class get_word(View):
                 
                  result=r.json();
                  return render(request,'display.html',{'result':result,'url':result['results'][0]['lexicalEntries'][0]['pronunciations'][0]['audioFile']})
-            return HttpResponse("No Word Exist in the Dictionary")
+            reurn HttpResponse("No Word Exist in the Dictionary")
