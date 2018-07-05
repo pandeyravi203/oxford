@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <h1 align="center">Here Is The Explanation</h1>
+ <audio controls>
+  <source src="{{ url }}" type="audio/mpeg">
+</audio>
+ {% for res in result.results %}
+         {% for lexen in res.lexicalEntries %}
+             <h3>{{ lexen.lexicalCategory }}</h3>
+            {% for en in lexen.entries %}
+              <ol>
+               {% for sen in en.senses %}
+
+                  {% for def in sen.definitions %}
+                   <li>  <b>Definition:</b>{{ def }} </li>
+                  {% endfor %}
+                   <br>
+                   <b>Examples</b>:
+                   {% for ex in sen.examples %}
+                    <ul><li>{{ ex.text }}</li></ul>
+                   {% endfor %}<br>
+              </ol>
+               {% endfor %}
+            {% endfor %}
+         {% endfor %}
+{% endfor %}
+</body>
+</html>
