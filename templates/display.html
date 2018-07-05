@@ -10,6 +10,7 @@
   <source src="{{ url }}" type="audio/mpeg">
 </audio>
  {% for res in result.results %}
+    <h1>{{res.word}}</h1>
          {% for lexen in res.lexicalEntries %}
              <h3>{{ lexen.lexicalCategory }}</h3>
             {% for en in lexen.entries %}
