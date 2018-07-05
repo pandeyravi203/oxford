@@ -24,5 +24,8 @@ class get_word(View):
             url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/' + language + '/' + word_id.lower()
 
             r = requests.get(url, headers={'app_id': app_id, 'app_key': app_key})
-            result=r.json();
-            return render(request,'display.html',{'result':result,'url':result['results'][0]['lexicalEntries'][0]['pronunciations'][0]['audioFile']})
+            if r.status_code==200:
+                
+                 result=r.json();
+                 return render(request,'display.html',{'result':result,'url':result['results'][0]['lexicalEntries'][0]['pronunciations'][0]['audioFile']})
+            reurn HttpResponse("No Word Exist in the Dictionary")
