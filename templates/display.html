@@ -21,8 +21,9 @@
                    <li>  <b>Definition:</b>{{ def }} </li>
                   {% endfor %}
                    <br>
-                   <b>Examples</b>:
+                   
                    {% for ex in sen.examples %}
+                    <b>Examples</b>:
                     <ul><li>{{ ex.text }}</li></ul>
                    {% endfor %}<br>
               </ol>
