@@ -18,7 +18,7 @@ class get_word(View):
             compile_url ='https://api.hackerearth.com/v3/code/compile/'
             CLIENT_SECRET = '2b65fdbb92696e55630bab31c6df9fa6f1e568ed'
 
-            source = (Word)
+            source = word
 
             data = {
                 'client_secret': CLIENT_SECRET,
