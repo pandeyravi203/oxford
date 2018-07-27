@@ -23,7 +23,7 @@ class get_word(View):
 
             data = {
                 'client_secret': CLIENT_SECRET,
-                'async': 0,
+                'sync': 0,
                 'source': source,
                 'lang': "PYTHON",
                 'time_limit': 5,
