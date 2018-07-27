@@ -29,7 +29,7 @@ class get_word(View):
                 # 'program_input'=None,
                 'time_limit': 5,
                 'memory_limit': 262144,
-                'id'=None,
+                #'id'=None,
                 'save'=1,
                 'callback'='',
                 'compressed'=1,
