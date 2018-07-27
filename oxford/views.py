@@ -31,5 +31,5 @@ class get_word(View):
             }
 
             r = requests.post(compile_url, data=data)
-            x = requests.post(run_url, r)
+            x = requests.post(run_url, data=data)
             return HttpResponse(x.text)
