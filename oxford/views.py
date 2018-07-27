@@ -15,17 +15,22 @@ class get_word(View):
            form=Myform(request.POST)
            if form.is_valid():
             word = form.cleaned_data['Word']
-            app_id = '4ec53208'
-            app_key = '290c1054bfd9faf454d9b894623d68cb'
-            result={}
-            language = 'en'
-            word_id = word
+            compile_url ='https://api.hackerearth.com/v3/code/compile/'
+            CLIENT_SECRET = '2b65fdbb92696e55630bab31c6df9fa6f1e568ed'
 
-            url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/' + language + '/' + word_id.lower()
+            source = (Word)
 
-            r = requests.get(url, headers={'app_id': app_id, 'app_key': app_key})
+            data = {
+                'client_secret': CLIENT_SECRET,
+                'async': 0,
+                'source': source,
+                'lang': "PYTHON",
+                'time_limit': 5,
+                'memory_limit': 262144,
+            }
+
+            r = requests.post(compile_url, data=data)
             if r.status_code==200:
                 
                  result=r.json();
-                 return render(request,'display.html',{'result':result,'url':result['results'][0]['lexicalEntries'][0]['pronunciations'][0]['audioFile']})
-            return HttpResponse("No Word Exist in the Dictionary")
+                 return HttpResponse(result)
