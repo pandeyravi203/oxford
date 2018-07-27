@@ -26,7 +26,7 @@ class get_word(View):
                 'sync': 0,
                 'source': source,
                 'lang': "PYTHON",
-                 'program_input'=None,
+                # 'program_input'=None,
                 'time_limit': 5,
                 'memory_limit': 262144,
                 'id'=None,
