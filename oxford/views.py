@@ -30,7 +30,7 @@ class get_word(View):
                 'time_limit': 5,
                 'memory_limit': 262144,
                 #'id'=None,
-                'save'=1,
+               # 'save'=1,
                 'callback'='',
                 'compressed'=1,
                 'html'=1,
