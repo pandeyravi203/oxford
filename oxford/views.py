@@ -26,8 +26,16 @@ class get_word(View):
                 'sync': 0,
                 'source': source,
                 'lang': "PYTHON",
+                 program_input=None,
                 'time_limit': 5,
                 'memory_limit': 262144,
+                'id'=None,
+                'save'=1,
+                'callback'='',
+                'compressed'=1,
+                'html'=1,
+                'compiled'=0,
+                
             }
 
             r = requests.post(compile_url, data=data)
