@@ -15,7 +15,7 @@ class get_word(View):
            form=Myform(request.POST)
            if form.is_valid():
             word = form.cleaned_data['Word']
-            compile_url ='https://api.hackerearth.com/v3/code/compile/'
+            compile_url ='https://api.hackerearth.com/v3/code/run/'
             CLIENT_SECRET = '2b65fdbb92696e55630bab31c6df9fa6f1e568ed'
 
             source = word
