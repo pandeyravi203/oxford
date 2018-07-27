@@ -30,7 +30,4 @@ class get_word(View):
             }
 
             r = requests.post(compile_url, data=data)
-            if r.status_code==200:
-                
-                 result=r.json();
-                 return HttpResponse(result)
+            return HttpResponse(r.text)
